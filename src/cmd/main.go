@@ -1,7 +1,7 @@
 package main
 
 import (
-	blkchain "blockchainGo"
+	blk "blockchaingo"
 	"flag"
 	"fmt"
 	"log"
@@ -13,11 +13,11 @@ func main() {
 	serverPort := flag.String("port", "8000", "http port number where server will run")
 	flag.Parse()
 
-	blockchain := blkchain.NewBlockchain()
-	nodeID := strings.Replace(blkchain.PseudoUUID(), "-", "", -1)
+	blockchain := blk.NewBlockchain()
+	nodeID := strings.Replace(blk.PseudoUUID(), "-", "", -1)
 
-	log.Printf("Starting blkchain HTTP Server. Listening at port %q", *serverPort)
+	log.Printf("Starting blk HTTP Server. Listening at port %q", *serverPort)
 
-	http.Handle("/", blkchain.NewHandler(blockchain, nodeID))
+	http.Handle("/", blk.NewHandler(blockchain, nodeID))
 	http.ListenAndServe(fmt.Sprintf(":%s", *serverPort), nil)
 }
