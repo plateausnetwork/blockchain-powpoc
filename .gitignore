@@ -3,12 +3,13 @@ vendor/
 
 bin/*
 !bin/.gitkeep
-/pkg
 .idea/
 .env
 token.txt
-pkg/
+pkg
+pkg/*
 
 src/vendor
 src/vendor/*
 src/.env
+.env
