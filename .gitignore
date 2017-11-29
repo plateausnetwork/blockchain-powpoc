@@ -1,0 +1,14 @@
+vendor/
+.vscode/
+
+bin/*
+!bin/.gitkeep
+/pkg
+.idea/
+.env
+token.txt
+pkg/
+
+src/vendor
+src/vendor/*
+src/.env
